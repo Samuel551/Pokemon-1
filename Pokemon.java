@@ -59,7 +59,7 @@ public class Pokemon{
 		return this.nivel;
 	}
 	public void ganar_exp(boolean true){
-		this.expe = getexp()+50;
+		this.expe = getexp()+25;
 		if (this.expe!=0){
 			System.out.println("\n***** Has ganado 25 de experiencia****\n");
 			if(this.expe==50){
