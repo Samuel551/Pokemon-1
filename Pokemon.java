@@ -4,6 +4,8 @@ public class Pokemon{
 	private boolean capturado;
 	private boolean visto;
 	private final int ps_max;
+	private int expe;
+	private int nivel;
 	private int ps;
 	private int ataque;
 	private Ataque [] ataques = new Ataque[SetupPokemon.cantidadAtaques];
@@ -12,6 +14,8 @@ public class Pokemon{
 		int valor=6;
 		this.id = id;
 		this.nombre = nombre;
+		this. expe = SetupPokemon.experiencia;
+		this.nivel = SetupPokemon.nivel;
 		this.ps_max = SetupPokemon.ps_max;
 		this.ps = this.ps_max;
 		this.ataque = SetupPokemon.ataque;
@@ -47,5 +51,25 @@ public class Pokemon{
 	}
 	public void restaurar(){
 		this.ps = this.ps_max;
+	}
+	public int getexp(){
+		return this.expe;
+	}
+	public int getnivel(){
+		return this.nivel;
+	}
+	public void ganar_exp(boolean true){
+		this.expe = getexp()+50;
+		if (this.expe!=0){
+			System.out.println("\n***** Has ganado 25 de experiencia****\n");
+			if(this.expe==50){
+				this.nivel= this.nivel+1;
+				System.out.println(getNombre()+" Felicidades has subido al nivel"+getnivel()+"\n");
+				if(this.expe==100){
+					this.nivel= this.nivel+1;
+					System.out.println(getNombre()+" Felicidades has subido al nivel"+getnivel()+"\n");
+				}
+			}
+		}
 	}
 }

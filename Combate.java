@@ -7,6 +7,8 @@ public class Combate{
 	private Pokemon player2;
 	private int indexRival;
 	BufferedReader buffer;
+	Pokemon p1 = new Pokemon();
+
 
 	Combate(Pokemon player1, Pokedex pokedexGral){
 		buffer = new BufferedReader(new InputStreamReader(System.in));
@@ -45,6 +47,7 @@ public class Combate{
 				out = indexRival;
 				player1.restaurar();
 				player2.restaurar();
+				p1.ganar_exp(true);
 				break;
 			} 
 			ataque(player2,player1);
